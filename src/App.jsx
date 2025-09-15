@@ -1,12 +1,22 @@
 import './App.css'
 import ToDo from './ToDo.jsx'
 import Actor from './Actor.jsx';
+import Singer from './Singer.jsx';
 function App() {
 
   const actors = ['Bappa ', 'Jasim', 'Kabila', "Sabnur", "Habu", 'Pasha'];
 
+  const singers = [
+    { id: 1, name: 'Tahsan', age: 45 },
+    { id: 2, name: 'Kona', age: 35 },
+    { id: 3, name: 'AB', age: 70 }
+  ]
+
   return (
     <>
+      {
+        singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
+      }
       <ToDo task='Js' isDone={true} time={100}></ToDo>
       <ToDo task='Python' isDone={false} time={200}></ToDo>
       <ToDo task='Java' isDone={true} time={50}></ToDo>
