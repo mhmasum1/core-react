@@ -2,6 +2,7 @@ import './App.css'
 import ToDo from './ToDo.jsx'
 import Actor from './Actor.jsx';
 import Singer from './Singer.jsx';
+import CountShow from './CountShow.jsx';
 function App() {
 
   const actors = ['Bappa ', 'Jasim', 'Kabila', "Sabnur", "Habu", 'Pasha'];
@@ -14,6 +15,8 @@ function App() {
 
   return (
     <>
+      <CountShow></CountShow>
+
       {
         singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
       }
