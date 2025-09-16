@@ -3,6 +3,8 @@ import ToDo from './ToDo.jsx'
 import Actor from './Actor.jsx';
 import Singer from './Singer.jsx';
 import CountShow from './CountShow.jsx';
+import { lazy, Suspense } from 'react';
+const Users = lazy(() => import('./Users.jsx'));
 function App() {
 
   const actors = ['Bappa ', 'Jasim', 'Kabila', "Sabnur", "Habu", 'Pasha'];
@@ -15,8 +17,10 @@ function App() {
 
   return (
     <>
+      <Suspense fallback={<h1>Users are Coming......</h1>}>
+        <Users></Users>
+      </Suspense>
       <CountShow></CountShow>
-
       {
         singers.map(singer => <Singer key={singer.id} singer={singer}></Singer>)
       }
